@@ -1,6 +1,8 @@
 from . import globals
 from os import listdir
 import importlib
+# import os
+# print(os.path.abspath(os.getcwd()))
 
 dir_path = "./commands/"
 
