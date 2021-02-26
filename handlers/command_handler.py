@@ -1,4 +1,4 @@
-from . import globals
+from handlers import globalvars
 from os import listdir
 import importlib
 # import os
@@ -12,4 +12,4 @@ for file in command_files:
     file_dir = 'commands.' + file.split('.')[0].lower()
     cmd = importlib.import_module(file_dir)
     if cmd.name:
-        globals.commands[cmd.name.lower()] = cmd
+        globalvars.commands[cmd.name.lower()] = cmd

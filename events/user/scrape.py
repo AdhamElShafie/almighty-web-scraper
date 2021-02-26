@@ -1,15 +1,19 @@
-from handlers import globals
-from os import listdir
-from functools import partial
+from handlers import globalvars
+import traceback
 
-msg = globals.website
+def scrape():
+    try:
+        msg = globalvars.website
+        print('h1')
+        cmd = msg.lower()
 
-if not msg or msg == '':
-    print("No input given")
+        command = globalvars.commands.get(cmd)
+        print('h2')
+        if command:
+            print('h3')
+            command.execute()
+    except:
+        print("No input given")
+        traceback.print_exc()
+    
 
-cmd = msg.lower()
-
-command = globals.commands.get(cmd)
-
-if command:
-    command.execute()
